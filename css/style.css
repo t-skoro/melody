@@ -13,6 +13,11 @@
 body {
 	font-family: "Roboto", sans-serif;
 }
+svg {
+	max-width: 100%;
+	vertical-align: middle;
+	height: auto;
+}
 .header {
 	background-color: #635854;
 	padding: 12px 0;
@@ -60,7 +65,7 @@ body {
 .main {
 	max-width: 1280px;
 	margin: auto;
-	padding-top: 54px;
+	padding: 54px 0 100px;
 	display: flex;
 }
 .main-info {
@@ -70,6 +75,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
+	padding: 68px 0 66px;
 }
 .home-image path {
 	opacity: 0;
@@ -99,7 +105,7 @@ path.current-floor {
 	border: none;
 	cursor: pointer;
 }
-.counter {
+.floor-counter {
 	margin-top: 10px;
 	color: #635854;
 	font-size: 124px;
@@ -115,4 +121,110 @@ path.current-floor {
 	border: none;
 	padding: 16px 36px;
 	cursor: pointer;
+}
+.footer {
+	padding: 50px 81px 56px;
+	background-color: #d7d7d7;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.footer-info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.modal {
+	position: fixed; /*фиксированная позиция поверх всего сайта*/
+	left: 0; /*приклеиваем к левому краю*/
+	top: 0; /*приклеиваем к верху*/
+	width: 100%; /*перекрывает весь сайт*/
+	height: 100%; /*перекрывает весь сайт*/
+	background-color: rgba(0, 0, 0, 0.8);
+	display: flex; /*гибкий родительский элемент*/
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	transform: scale(0); /*окно сожмётся в ноль*/
+	transition: opacity 0.2s;
+}
+.is-open {
+	opacity: 1;
+	transform: scale(1);
+}
+.modal-dialog {
+	position: relative;
+	max-width: 1000px;
+	min-height: 565px;
+	background-color: #fff;
+	flex-grow: 1;
+	display: flex;
+	opacity: 0;
+	transform: translateY(-10%);
+	transition: transform 0.2s, opacity 0.2s;
+	transition-delay: 0.2s; /*плавность*/
+}
+.is-open > .modal-dialog {
+	opacity: 1;
+	transform: translateY(0);
+}
+.modal-image {
+	background-color: #ebebeb;
+	width: 60%;
+	text-align: center;
+	padding: 50px;
+}
+.flats path {
+	opacity: 0;
+	cursor: pointer;
+}
+.flats path:hover {
+	opacity: 1;
+}
+.modal-title {
+	font-family: "Bebas Neue", sans-serif;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 29px;
+	margin: 0 0 25px;
+}
+.modal-info {
+	width: 40%;
+	padding: 50px 46px;
+}
+.flat-list {
+	padding: 0;
+	list-style: none;
+	margin-top: 55px;
+}
+.flat-item {
+	margin-bottom: 10px;
+}
+.flat-link {
+	font-family: "Bebas Neue", sans-serif;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 19px;
+	color: #635854;
+	text-decoration: none;
+}
+.flat-link:hover {
+	text-decoration: underline;
+	color: #3596f5;
+}
+.modal-alert {
+	font-style: italic;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 19px;
+	color: #635854;
+	margin-top: 56px;
+}
+.modal-close-button {
+	position: absolute;
+	top: 38px;
+	right: 27px;
+	cursor: pointer;
+	border: none;
+	background-color: #fff;
 }

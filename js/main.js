@@ -4,6 +4,9 @@ $(document).ready(function () {//функция, которая проверяе
     var floorPath = $('.home-image path'); // каждый отдельный этаж в SVG
     var counterUp = $('.counter-up'); //стрелка вверх, кнопка увеличения этажа - нашли кнопку с помощью jquery и записали в переменную
     var counterDown = $('.counter-down'); // кнопка уменьшения этажа
+    var modal = $('.modal');
+    var modalCloseButton = $('.modal-close-button');
+    var viewFlatsButton = $('.view-flats');
 
     // надо узнать на какой текущий этаж нажали .on('click'), получить номер этого этажа, этот атрибут. Сначала находим сам этот path, а затем с помощью this и номер этажа. Сохраним это в переменную currentFloor. Далее можно не при клике указать, а при наведении, функция .on('mouseover')
     floorPath.on('mouseover', function () {
@@ -12,6 +15,10 @@ $(document).ready(function () {//функция, которая проверяе
         // далее запишем этот currentFloor в счётчик
         $('.counter').text(currentFloor);
     });
+
+    floorPath.on('click', toggleModal); /*при клике на этаж, вызвать модальное окно*/
+    modalCloseButton.on('click', toggleModal); /*при клике на кнопку крестик, закрыть окно*/
+    viewFlatsButton.on('click', toggleModal); /*при клике на кнопку крестик, закрыть окно*/
 
     //менять значение счётчика при нажатии на стрелки и подсвечивать текущий этаж. Отследим клик по стрелке вверх
     counterUp.on('click', function () {
@@ -37,7 +44,12 @@ $(document).ready(function () {//функция, которая проверяе
             floorPath.removeClass('current-floor');
             $(`[data-floor=${usCurrentFloor}]`).toggleClass('current-floor');
         }
-    })
+    });
+
+    /*ф-я открыть-закрыть окно*/
+    function toggleModal() {
+        modal.toggleClass('is-open');
+    }
 });
 
 
