@@ -43,6 +43,7 @@ svg {
 }
 .navbar-item:hover {
 	background-color: #3596f5;
+	cursor: pointer;
 }
 .navbar-link {
 	text-decoration: none;
