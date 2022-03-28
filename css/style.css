@@ -20,7 +20,6 @@ svg {
 }
 .header {
 	background-color: #635854;
-	padding: 12px 0;
 	border-bottom: 4px solid #3596f5;
 }
 .navbar {
@@ -38,8 +37,12 @@ svg {
 	text-align: center;
 }
 .navbar-item {
-	margin-left: 40px;
-	margin-right: 40px;
+	margin: 0 24px;
+	padding: 12px 16px;
+	transition: 0.2s ease-in;
+}
+.navbar-item:hover {
+	background-color: #3596f5;
 }
 .navbar-link {
 	text-decoration: none;
@@ -61,6 +64,10 @@ svg {
 	line-height: 20px;
 	text-decoration: none;
 	color: #fff;
+	transition: 0.2s ease-in;
+}
+.navbar-phone:hover {
+	color: #3596f5;
 }
 .main {
 	max-width: 1280px;
@@ -121,6 +128,10 @@ path.current-floor {
 	border: none;
 	padding: 16px 36px;
 	cursor: pointer;
+	transition: 0.2s ease-in;
+}
+.button-primary:hover {
+	background: #2c6eaf;
 }
 .footer {
 	padding: 50px 81px 56px;
@@ -133,6 +144,57 @@ path.current-floor {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+}
+.footer-contacts {
+	margin-left: 37px;
+}
+.footer-text {
+	color: #635854;
+}
+.footer-phone {
+	color: #635854;
+	transition: 0.2s ease-in;
+}
+.footer-phone:hover {
+	color: #3596f5;
+}
+.footer-socials {
+	margin-left: 60px;
+}
+.footer-socials a {
+	margin-right: 15px;
+	transition: 0.2s ease-in;
+}
+.footer-socials a:hover {
+	opacity: 0.7;
+}
+.footer-socials a:last-child {
+	margin-right: 0px;
+}
+.footer-item {
+	margin-right: 20px;
+}
+.footer-item:last-child {
+	margin-right: 0;
+}
+.footer-list {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.documents-link {
+	font-family: "Roboto";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19px;
+	text-decoration-line: underline;
+	color: #635854;
+	transition: 0.2s ease-in;
+}
+.documents-link:hover {
+	color: #3596f5;
 }
 .modal {
 	position: fixed; /*фиксированная позиция поверх всего сайта*/
